@@ -249,6 +249,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
 
   var beacon = setInterval(function(){
     $scope.beaconArr = window.dApp.beaconArr;
+    $scope.beaconArrLength= window.dApp.beaconArr.length;
   }, 100);
 
   // User agent displayed in home page
