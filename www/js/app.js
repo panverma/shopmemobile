@@ -251,10 +251,11 @@ app.controller('MainController', function($rootScope, $scope, $location,
             $scope.beaconArr = window.dApp.beaconArr;
             $scope.beaconArrLength = window.dApp.beaconArr.length;
             $scope.$apply();
+            alert(window.dApp.beaconArr.length);
             if (beaconArrLength > 0) {
                 $scope.getProductOfferList();
             }
-        }, 100);
+        }, 1000);
     }
 
     // User agent displayed in home page
