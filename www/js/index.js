@@ -60,7 +60,7 @@ var dApp = (function() {
                 beacons[key] = beacon;
                 app.beaconArr = pluginResult.beacons;
             }
-            alert("index.js" + app.beaconArr.length);
+            //alert("index.js" + app.beaconArr.length);
 
         };
 
