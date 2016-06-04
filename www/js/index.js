@@ -1,22 +1,15 @@
-var app = (function()
+var dApp = (function()
 {
 	// Application object.
-	var app = {};
 
+	var app = {};
+  app.beaconArr = new Array();
 	// Specify your beacon 128bit UUIDs here.
 	var regions =
 	[
 		// Estimote Beacon factory UUID.
 		{uuid:'B5B182C7-EAB1-4988-AA99-B5C1517008D9'},
-		{uuid:'2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6'},
-		{uuid:'B9407F30-F5F8-466E-AFF9-25556B57FE6D'},
-		// Sample UUIDs for beacons in our lab.
-		{uuid:'F7826DA6-4FA2-4E98-8024-BC5B71E0893E'},
-		{uuid:'8DEEFBB9-F738-4297-8040-96668BB44281'},
-		{uuid:'A0B13730-3A9A-11E3-AA6E-0800200C9A66'},
-		{uuid:'E20A39F4-73F5-4BC4-A12F-17D1AD07A961'},
-		{uuid:'A4950001-C5B1-4B44-B512-1370F02D74DE'},
-		{uuid:'585CDE93-1B01-42CC-9A13-25009BEDC65E'},	// Dialog Semiconductor.
+		{uuid:'2F234454-CF6D-4A0F-ADF2-F4911BA9FFA6'}
 	];
 
 	// Background detection.
@@ -33,22 +26,22 @@ var app = (function()
 
 	app.initialize = function()
 	{
+
 		document.addEventListener(
-			'deviceready',
-			function() { evothings.scriptsLoaded(onDeviceReady) },
-			false);
+			'deviceready', onDeviceReady, false);
+			//function() { evothings.scriptsLoaded(onDeviceReady) },false
 	};
 
 	function onDeviceReady()
 	{
 		// Specify a shortcut for the location manager holding the iBeacon functions.
 		window.locationManager = cordova.plugins.locationManager;
-
+    alert("On Device Ready Called");
 		// Start tracking beacons!
 		startScan();
 
 		// Display refresh timer.
-		updateTimer = setInterval(displayBeaconList, 500);
+		updateTimer = setInterval(displayBeaconList, 50);
 	}
 
 	function startScan()
@@ -56,11 +49,12 @@ var app = (function()
 		// The delegate object holds the iBeacon callback functions
 		// specified below.
 		var delegate = new locationManager.Delegate();
-
+		alert("Device trying to found");
 		// Called continuously when ranging beacons.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 			//console.log('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult))
+			alert("Device found " + pluginResult.beacons.length);
 			for (var i in pluginResult.beacons)
 			{
 				// Insert beacon into table of found beacons.
@@ -126,16 +120,21 @@ var app = (function()
 		}
 	}
 
+	var beacons = ""
 	function displayBeaconList()
 	{
+		//alert("Device show");
 		// Clear beacon list.
 		$('#found-beacons').empty();
 
 		var timeNow = Date.now();
 
 		// Update beacon list.
+
+		return;
 		$.each(beacons, function(key, beacon)
 		{
+      alert(beacon.uuid);
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
@@ -162,8 +161,6 @@ var app = (function()
 			}
 		});
 	}
-
 	return app;
 })();
-
-app.initialize();
+dApp.initialize();

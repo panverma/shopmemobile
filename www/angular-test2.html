@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+  </head>
+  <body ng-app="MyApp">
+  	<div ng-controller="MyController">
+  		<h1>Hello, world!</h1>
+    	<input type="text" ng-model="data.label">
+		<button class="btn btn-primary" ng-model="btn">{{data.label}}</button>
+  		<my-directive></my-directive>
+  		<button class="btn" my-directive2 >Test</button>
+  		<my-directive3 my-directive4 my-directive5 class="btn btn-default">Test2</my-directive3>
+  		<my-directive3 my-directive5 class="btn btn-default">Test3</my-directive3>
+  		<my-directive3 my-directive4 class="btn btn-default">Test4</my-directive3>
+		<div class="row">
+	  		<my-directive6 first-name="Nilesh" last-name="Shinde" use-ctrl-func="forDirective(firstname, lastname, relation)"></my-directive6>
+	  		<my-directive6 first-name="Tejaswini" last-name="Surve" use-ctrl-func="forDirective(firstname, lastname, relation)"></my-directive6>
+	  		<my-directive6 first-name="Vaidehi" last-name="Shinde" use-ctrl-func="forDirective(firstname, lastname, relation)"></my-directive6>
+  		</div>
+  	</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script type="text/javascript">
+    	var app = angular.module('MyApp', []);
+
+		app.controller("MyController", function($scope) {
+			$scope.data = {
+				label: 'My Button'
+			};
+
+			$scope.options = ["Wife", "Brother", "Mother"];
+			$scope.selectedOption = $scope.options[0];
+
+			$scope.names = [];
+
+			this.othername = function(){
+				$scope.names.push("Nilesh");
+			};
+
+			this.othername2 = function(){
+				$scope.names.push("Ranu");
+			};
+
+			$scope.forDirective = function(firstname, lastname, relation){
+				console.log(firstname+' '+lastname + " is my " + relation);
+			};
+		});
+
+		app.directive('myDirective6', function(){
+			return {
+				restrict: 'E',
+				scope: {
+					firstName: '@',
+					lastName: '@',
+					selectedOption: '=',
+					useCtrlFunc: '&'
+				},
+				templateUrl: 'template.html',
+				controller: 'MyController'
+			}
+		});
+
+		app.directive('myDirective2', function(){
+			return {
+				restrict: 'A',
+				link: function(scope, element, attrs){
+					element.bind('click', function(){
+						element[0].innerText = "Changed";
+					})
+				}
+			}
+		})
+
+		.directive('myDirective', function(){
+			return {
+				restrict: 'E',
+				transclude: true,
+				template: '<h2>Hi Nilesh</h2>'
+			}
+		})
+
+		.directive('myDirective3', function(){
+			return {
+				restrict: 'E',
+				scope: {},
+				controller: 'MyController',
+				link: function(scope, element, attrs){
+					element.bind('click', function(){
+						console.log(scope.names);
+					})
+				}
+			}
+		})
+
+		.directive('myDirective4', function(){
+			return {
+				require: 'myDirective3',
+				link: function(scope, element, attrs, MyController){
+					MyController.othername();
+				}
+			}
+		})
+
+		.directive('myDirective5', function(){
+			return {
+				require: 'myDirective3',
+				link: function(scope, element, attrs, MyController){
+					MyController.othername2();
+				}
+			}
+		})
+
+
+    </script>
+  </body>
+</html>
