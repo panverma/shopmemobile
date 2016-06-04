@@ -181,14 +181,32 @@ app.initialize();
 $(document).ready(function(){
 	$("#clickemeplease").on("click", function(){
 		console.log("clicked");
+
+
 		var data = JSON.stringify({"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":1,"rs":-44},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":2,"rs":-32},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":3,"rs":-68}],"storeId":0})
-		$.post(
-			"http://shopme-epamershackers.rhcloud.com/view",
-			data,
-			function(data,status,xhr){
-				console.log("sucess"+ data);
-			}
-		);
+		// $.post(
+		// 	"http://shopme-epamershackers.rhcloud.com/view",
+		// 	data,
+		// 	function(data,status,xhr){
+		// 		console.log("sucess"+ data);
+		// 	}
+		// );
+		$.ajax({
+		    url: url,
+		    type: "GET",
+		    data: JSON.stringify(data),
+		    contentType: "application/json",
+		    complete: callback
+		});
+
+		// $.ajax({
+		//     url: url,
+		//     type: "POST",
+		//     data: data,
+		//     contentType: "application/json",
+		//      complete: callback
+ 	// 	});
+
 	});
 
 
