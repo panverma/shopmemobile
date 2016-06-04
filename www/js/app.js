@@ -5,7 +5,6 @@ var app = angular.module('MobileAngularUiExamples', [
 ]);
 
 app.run(function($transform) {
-    alert("this::: " + window.dApp.beaconArr);
     window.$transform = $transform;
 });
 
@@ -365,5 +364,5 @@ app.controller('MainController', function($rootScope, $scope, $location,
             });
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-
+    $scope.productOfferListData = [];
 });
