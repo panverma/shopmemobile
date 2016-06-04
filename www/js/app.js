@@ -245,7 +245,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
 
     var beacon;
 
-    $scope.setInterval = function() {
+    $scope.setTimer = function() {
         beacon = setInterval(function() {
             window.setTimeout(function(){
               $scope.beaconArr = window.dApp.beaconArr;
@@ -257,6 +257,8 @@ app.controller('MainController', function($rootScope, $scope, $location,
             }
         }, 2000);
     };
+
+    $scope.setTimer();
 
     // User agent displayed in home page
     $scope.userAgent = navigator.userAgent;
@@ -355,11 +357,11 @@ app.controller('MainController', function($rootScope, $scope, $location,
         $http.post($scope.masterUrl + "view/", reqObj)
             .success(function(data, status, headers, config) {
                 $scope.data = data;
-                $scope.setInterval();
+                $scope.setTimer();
                 //alert("success");
                 //console.log($scope.data);
             }).error(function(data, status, headers, config) {
-                $scope.setInterval();
+                $scope.setTimer();
                 $scope.status = status;
                 //alert("error");
             });
