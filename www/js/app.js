@@ -248,7 +248,6 @@ app.controller('MainController', function($rootScope, $scope, $location,
     $scope.setTimer = function() {
         beacon = setInterval(function() {
             window.setTimeout(function(){
-              
               $scope.beaconArr = window.dApp.beaconArr;
               $scope.beaconArrLength = window.dApp.beaconArr.length;
               $scope.$apply();
@@ -350,7 +349,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     $scope.getProductOfferList = function() {
-        //alert("call ajax"); 
+        alert("call ajax"); 
         clearInterval(beacon);
         var reqObj = new Object();
         reqObj.reqType = "PRODUCT";
