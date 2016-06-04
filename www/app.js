@@ -178,7 +178,7 @@ $(document).ready(function(){
 		var data = ({"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":500,"rs":"-44"}],"storeId":0});
 		$.ajax({
 		    url: url,
-		    type: "GET",
+		    type: "POST",
 		    data: JSON.stringify(data),
 		    contentType: "application/json",
 		    complete: onBeaconListResponse
