@@ -2,40 +2,16 @@
     <span>Near by Product's</span>
 </div>
 <div class="list-group">
-    <a href="#" class="list-group-item active">
-        <div class="row">
-            <div class="col-xs-4">
-                <img src="img/1.jpg" class="col-xs-12">
-            </div>
-            <div class="col-xs-8">
-                <span class="badge pull-right">4</span>
-                <h4 class="list-group-item-heading">First List Group Item Heading</h4>
-                <p class="list-group-item-text">List Group Item Text</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="list-group-item">
-        <div class="row">
-            <div class="col-xs-4">
-                <img src="img/1.jpg" class="col-xs-12">
-            </div>
-            <div class="col-xs-8">
-                <span class="badge pull-right">4</span>
-                <h4 class="list-group-item-heading">First List Group Item Heading</h4>
-                <p class="list-group-item-text">List Group Item Text</p>
-            </div>
-        </div>
-    </a>
-    <a href="#" class="list-group-item">
-        <div class="row">
-            <div class="col-xs-4">
-                <img src="img/1.jpg" class="col-xs-12">
-            </div>
-            <div class="col-xs-8">
-                <span class="badge pull-right">4</span>
-                <h4 class="list-group-item-heading">First List Group Item Heading</h4>
-                <p class="list-group-item-text">List Group Item Text</p>
-            </div>
-        </div>
+    <a ng-repeat="offer in prodListData" class="list-group-item"
+    ng-click="onprodListItemClickfromHome($event);" style="pointer:cursor;">
+      <div class="row">
+          <div style="width:150px; border-raduis:4px;">
+              <img src="img/{{offer.imageName}}" class="col-xs-12" />
+          </div>
+          <div style="float:left; padding-left:0px;">
+              <h4 class="list-group-item-heading">{{offer.sDesc}}</h4>
+              <p class="list-group-item-text">{{offer.lDesc}}</p>
+          </div>
+      </div>
     </a>
 </div>

@@ -15,7 +15,8 @@ app.run(function($transform) {
 //
 app.config(function($routeProvider) {
     $routeProvider.when('/', { templateUrl: 'home.html', reloadOnSearch: false });
-    $routeProvider.when('/productdesc/:src/:prodid', { templateUrl: 'productdesc.html', reloadOnSearch: false });
+    $routeProvider.when('/offer/:src/:offerid', { templateUrl: 'productdesc.html', reloadOnSearch: false });
+    $routeProvider.when('/product/:src/:prodid', { templateUrl: 'productdesc.html', reloadOnSearch: false });
     $routeProvider.when('/store/:storeid', { templateUrl: 'store-offer-prod.html', reloadOnSearch: false });
     $routeProvider.when('/nearByStores', { templateUrl: 'near-by-stores.html', reloadOnSearch: false });
     $routeProvider.when('/findStore', { templateUrl: 'find-store.html', reloadOnSearch: false });
@@ -254,7 +255,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
             }, 1);
             alert(window.dApp.beaconArr.length);
             if (beaconArrLength > 0) {
-                $scope.getProductOfferList();
+                $scope.getOfferList();
             }
         }, 2000);
     };
@@ -311,12 +312,16 @@ app.controller('MainController', function($rootScope, $scope, $location,
         }
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-    $scope.onprodListItemClickfromHome = function(evt) {
-        $location.path("/productdesc/home/12345");
+    $scope.onProdListItemClickfromHome = function(evt) {
+        $location.path("/product/home/354645675");
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-    $scope.onprodListItemClickfromStore = function(evt) {
-        $location.path("/productdesc/store/12345");
+    $scope.onOfferListItemClickfromHome = function(evt) {
+        $location.path("/offer/home/23432453");
+    };
+    //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+    $scope.onStoreListItemClickfromHome = function(evt) {
+        $location.path("/store/12345");
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     $scope.onProductDescriptionPageInit = function() {
@@ -346,7 +351,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
 
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-    $scope.getProductOfferList = function() {
+    $scope.getOfferList = function() {
         alert("call ajax");
         clearInterval(beacon);
         var reqObj = new Object();
@@ -357,13 +362,43 @@ app.controller('MainController', function($rootScope, $scope, $location,
             .success(function(data, status, headers, config) {
                 $scope.offerListData = data;
                 $scope.setInterval();
-                alert("success");
-                //console.log($scope.data);
             }).error(function(data, status, headers, config) {
                 $scope.setInterval();
                 $scope.status = status;
-                alert("error");
             });
+    };
+    //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+    $scope.getNearbyProductList = function(){
+      clearInterval(beacon);
+      var reqObj = new Object();
+      reqObj.reqType = "PRODUCT";
+      reqObj.beacons = $scope.beaconArr;
+      reqObj.storeid = null;
+      $http.post($scope.masterUrl + "view/", reqObj)
+          .success(function(data, status, headers, config) {
+              $scope.prodListData = data;
+              $scope.setInterval();
+              //console.log($scope.data);
+          }).error(function(data, status, headers, config) {
+              $scope.setInterval();
+              $scope.status = status;
+          });
+    };
+    //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+    $scope.getNearbyStoreList = function(){
+      clearInterval(beacon);
+      var reqObj = new Object();
+      reqObj.reqType = "STORE";
+      reqObj.beacons = $scope.beaconArr;
+      reqObj.storeid = null;
+      $http.post($scope.masterUrl + "view/", reqObj)
+          .success(function(data, status, headers, config) {
+              $scope.storeListData = data;
+              $scope.setInterval();
+          }).error(function(data, status, headers, config) {
+              $scope.setInterval();
+              $scope.status = status;
+          });
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     $scope.offerListData =
