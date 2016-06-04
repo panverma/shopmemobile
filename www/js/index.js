@@ -52,14 +52,17 @@ var dApp = (function() {
 
             app.beaconArr = pluginResult.beacons;
 
-
             for (var i in pluginResult.beacons) {
                 // Insert beacon into table of found beacons.
                 var beacon = pluginResult.beacons[i];
                 beacon.timeStamp = Date.now();
                 var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
                 beacons[key] = beacon;
+                app.beaconArr = pluginResult.beacons;
+                alert(app.beaconArr);
             }
+            alert(app.beaconArr);
+
         };
 
         // Called when starting to monitor a region.
