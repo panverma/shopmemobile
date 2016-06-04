@@ -345,7 +345,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     $scope.getProductOfferList = function() {
-        alert("call ajax"); 
+        alert("call ajax");
         clearInterval(beacon);
         var reqObj = new Object();
         reqObj.reqType = "PRODUCT";
@@ -353,7 +353,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
         reqObj.storeid = null;
         $http.post($scope.masterUrl + "view/", reqObj)
             .success(function(data, status, headers, config) {
-                $scope.data = data;
+                $scope.offerListData = data;
                 $scope.setInterval();
                 alert("success");
                 //console.log($scope.data);
@@ -364,5 +364,55 @@ app.controller('MainController', function($rootScope, $scope, $location,
             });
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-    $scope.productOfferListData = [];
+    $scope.offerListData =
+[
+  {
+    "offerId": 1,
+    "storeId": 1,
+    "prodId": null,
+    "reqType": "OFFER",
+    "cat": null,
+    "per": "9%",
+    "shopName": null,
+    "sDesc": null,
+    "lDesc": "iPhone 6S ",
+    "imageName": "iphone6s.jpg"
+  },
+  {
+    "offerId": 2,
+    "storeId": 1,
+    "prodId": null,
+    "reqType": "OFFER",
+    "cat": null,
+    "per": "15%",
+    "shopName": null,
+    "sDesc": null,
+    "lDesc": "Samsung edge 7",
+    "imageName": "samsungedge7.jpg"
+  },
+  {
+    "offerId": 3,
+    "storeId": 2,
+    "prodId": null,
+    "reqType": "OFFER",
+    "cat": null,
+    "per": "4%",
+    "shopName": null,
+    "sDesc": null,
+    "lDesc": "Kowloon milk",
+    "imageName": "kowloonmilk.jpg"
+  },
+  {
+    "offerId": 4,
+    "storeId": 2,
+    "prodId": null,
+    "reqType": "OFFER",
+    "cat": null,
+    "per": "7%",
+    "shopName": null,
+    "sDesc": null,
+    "lDesc": "President butter",
+    "imageName": "presidentbutter.jpg"
+  }
+];
 });
