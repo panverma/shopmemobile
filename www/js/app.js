@@ -252,7 +252,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
               $scope.beaconArrLength = window.dApp.beaconArr.length;
               $scope.$apply();
               //alert("app.js " + window.dApp.beaconArr.length);
-              if (beaconArrLength > 0) {
+              if ($scope.beaconArrLength > 0) {
                 $scope.getProductOfferList();
               }
             }, 1);
@@ -349,7 +349,6 @@ app.controller('MainController', function($rootScope, $scope, $location,
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     $scope.getProductOfferList = function() {
-        alert("call ajax"); 
         clearInterval(beacon);
         var reqObj = new Object();
         reqObj.reqType = "PRODUCT";
@@ -359,12 +358,10 @@ app.controller('MainController', function($rootScope, $scope, $location,
             .success(function(data, status, headers, config) {
                 $scope.data = data;
                 $scope.setTimer();
-                alert("success");
                 //console.log($scope.data);
             }).error(function(data, status, headers, config) {
                 $scope.setTimer();
                 $scope.status = status;
-                //alert("error");
             });
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
