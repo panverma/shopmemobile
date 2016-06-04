@@ -244,10 +244,18 @@ app.controller('MainController', function($rootScope, $scope, $location,
         alert('Swiped ' + direction);
     };
 
-    var beacon = setInterval(function() {
-        $scope.beaconArr = window.dApp.beaconArr;
-        $scope.beaconArrLength = window.dApp.beaconArr.length;
-    }, 100);
+    var beacon;
+
+    $scope.setInterval = function() {
+        beacon = setInterval(function() {
+            $scope.beaconArr = window.dApp.beaconArr;
+            $scope.beaconArrLength = window.dApp.beaconArr.length;
+            $scope.$apply();
+            if (beaconArrLength > 0) {
+                $scope.getProductOfferList();
+            }
+        }, 100);
+    }
 
     // User agent displayed in home page
     $scope.userAgent = navigator.userAgent;
@@ -337,6 +345,8 @@ app.controller('MainController', function($rootScope, $scope, $location,
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     $scope.getProductOfferList = function() {
+        alert("call ajax");
+        clearInterval(beacon);
         var reqObj = new Object();
         reqObj.reqType = "PRODUCT";
         reqObj.beacons = $scope.beaconArr;
@@ -344,10 +354,15 @@ app.controller('MainController', function($rootScope, $scope, $location,
         $http.post($scope.masterUrl + "view/", reqObj)
             .success(function(data, status, headers, config) {
                 $scope.data = data;
+                $scope.setInterval();
+                alert("success");
+                //console.log($scope.data);
             }).error(function(data, status, headers, config) {
+                $scope.setInterval();
                 $scope.status = status;
+                alert("error");
             });
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-    $scope.getProductOfferList();
+
 });
