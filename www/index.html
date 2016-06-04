@@ -35,7 +35,17 @@
 
 			</h2>
 	<a href="#" class="jqm-navmenu-link ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-role="button" role="button">Menu</a>
-	<a href="#" class="jqm-search-link ui-nodisc-icon ui-alt-icon ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all" data-role="button" role="button">Search</a>
+	<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-search ui-btn-icon-left ui-btn-a ui-btn-icon-notext">Search</a>
+
+<div data-role="popup" id="popupMenu" data-theme="b">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-role="list-divider">Choose an action</li>
+            <li><a href="#">View details</a></li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Disable</a></li>
+            <li><a href="#">Delete</a></li>
+        </ul>
+</div>
 
 	<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
     <li><a href="#">
