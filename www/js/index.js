@@ -59,9 +59,8 @@ var dApp = (function() {
                 var key = beacon.uuid + ':' + beacon.major + ':' + beacon.minor;
                 beacons[key] = beacon;
                 app.beaconArr = pluginResult.beacons;
-                alert(app.beaconArr);
             }
-            alert(app.beaconArr);
+            alert("index.js" + app.beaconArr.length);
 
         };
 

@@ -250,9 +250,8 @@ app.controller('MainController', function($rootScope, $scope, $location,
             window.setTimeout(function(){
               $scope.beaconArr = window.dApp.beaconArr;
               $scope.beaconArrLength = window.dApp.beaconArr.length;
-              alert(window.dApp.beaconArr.length);
+              alert("app.js " + window.dApp.beaconArr.length);
             }, 1);
-            alert(window.dApp.beaconArr.length);
             if (beaconArrLength > 0) {
                 $scope.getProductOfferList();
             }
@@ -347,7 +346,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     $scope.getProductOfferList = function() {
-        alert("call ajax"); 
+        //alert("call ajax"); 
         clearInterval(beacon);
         var reqObj = new Object();
         reqObj.reqType = "PRODUCT";
@@ -357,12 +356,12 @@ app.controller('MainController', function($rootScope, $scope, $location,
             .success(function(data, status, headers, config) {
                 $scope.data = data;
                 $scope.setInterval();
-                alert("success");
+                //alert("success");
                 //console.log($scope.data);
             }).error(function(data, status, headers, config) {
                 $scope.setInterval();
                 $scope.status = status;
-                alert("error");
+                //alert("error");
             });
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
