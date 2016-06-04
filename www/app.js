@@ -126,6 +126,7 @@ var app = (function()
 		}
 	}
 
+
 	function displayBeaconList()
 	{
 		// Clear beacon list.
@@ -134,6 +135,16 @@ var app = (function()
 		var timeNow = Date.now();
 
 		// Update beacon list.
+
+		$.post(
+			"http://shopme-epamershackers.rhcloud.com/view",
+			{"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":1,"rs":-44},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":2,"rs":-32},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":3,"rs":-68}],"storeId":0},
+			function(data,status,xhr){
+				console.log("sucess"+ data);
+			}
+    );
+
+		//return;
 		$.each(beacons, function(key, beacon)
 		{
 			// Only show beacons that are updated during the last 60 seconds.
@@ -167,3 +178,18 @@ var app = (function()
 })();
 
 app.initialize();
+$(document).ready(function(){
+	$("#clickemeplease").on("click", function(){
+		console.log("clicked");
+		var data = JSON.stringify({"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":1,"rs":-44},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":2,"rs":-32},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":3,"rs":-68}],"storeId":0})
+		$.post(
+			"http://shopme-epamershackers.rhcloud.com/view",
+			data,
+			function(data,status,xhr){
+				console.log("sucess"+ data);
+			}
+		);
+	});
+
+
+})
