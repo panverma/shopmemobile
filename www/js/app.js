@@ -248,13 +248,15 @@ app.controller('MainController', function($rootScope, $scope, $location,
     $scope.setTimer = function() {
         beacon = setInterval(function() {
             window.setTimeout(function(){
+              
               $scope.beaconArr = window.dApp.beaconArr;
               $scope.beaconArrLength = window.dApp.beaconArr.length;
-              alert("app.js " + window.dApp.beaconArr.length);
-            }, 1);
-            if (beaconArrLength > 0) {
+              $scope.$apply();
+              //alert("app.js " + window.dApp.beaconArr.length);
+              if (beaconArrLength > 0) {
                 $scope.getProductOfferList();
-            }
+              }
+            }, 1);
         }, 2000);
     };
 
@@ -358,7 +360,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
             .success(function(data, status, headers, config) {
                 $scope.data = data;
                 $scope.setTimer();
-                //alert("success");
+                alert("success");
                 //console.log($scope.data);
             }).error(function(data, status, headers, config) {
                 $scope.setTimer();
