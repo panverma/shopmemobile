@@ -41,7 +41,7 @@ var dApp = (function() {
     }
 
     function startScan() {
-        // The delegate object holds the iBeacon callback functions
+        // The delegate object holds the iBeacon callback functions 
         // specified below.
         var delegate = new locationManager.Delegate();
         //alert("Device trying to found");

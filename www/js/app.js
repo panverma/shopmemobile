@@ -345,7 +345,7 @@ app.controller('MainController', function($rootScope, $scope, $location,
     };
     //-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
     $scope.getProductOfferList = function() {
-        alert("call ajax");
+        alert("call ajax"); 
         clearInterval(beacon);
         var reqObj = new Object();
         reqObj.reqType = "PRODUCT";
