@@ -171,35 +171,18 @@ var app = (function()
 
 
 $(document).ready(function(){
-<<<<<<< Updated upstream
-=======
 	app.initialize();
-
-
-
->>>>>>> Stashed changes
 	$("#clickemeplease").on("click", function(){
 		console.log("clicked");
-
-
-		var data = JSON.stringify({"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":1,"rs":-44},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":2,"rs":-32},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":3,"rs":-68}],"storeId":0})
-
+		var url = "http://shopme-epamershackers.rhcloud.com/view";
+		var data = ({"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":500,"rs":"-44"}],"storeId":0});
 		$.ajax({
 		    url: url,
 		    type: "GET",
 		    data: JSON.stringify(data),
 		    contentType: "application/json",
-		    complete: callback
+		    complete: onBeaconListResponse
 		});
-
-		// $.ajax({
-		//     url: url,
-		//     type: "POST",
-		//     data: data,
-		//     contentType: "application/json",
-		//      complete: callback
- 	// 	});
-
 	});
 	function onBeaconUpdated(_beaconList){
 		var beaconReq = new Object();
@@ -217,7 +200,6 @@ $(document).ready(function(){
 		});
 	};
 	function onBeaconListResponse(){
-	//	$("#contentArea").load("templates/homelist.html");
+		$("#contentArea").load("templates/homelist.html");
 	};
-onBeaconListResponse();
 })
