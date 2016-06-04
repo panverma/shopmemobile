@@ -1,0 +1,54 @@
+{"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":8810,"rs":"-44"},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":500,"rs":"-44"}],"storeId":0}
+
+
+
+[
+  {
+    "offerId": 1,
+    "storeId": 1,
+    "prodId": null,
+    "reqType": "OFFER",
+    "cat": null,
+    "per": "9%",
+    "shopName": null,
+    "sDesc": null,
+    "lDesc": "iPhone 6S ",
+    "imageName": "iphone6s.jpg"
+  },
+  {
+    "offerId": 2,
+    "storeId": 1,
+    "prodId": null,
+    "reqType": "OFFER",
+    "cat": null,
+    "per": "15%",
+    "shopName": null,
+    "sDesc": null,
+    "lDesc": "Samsung edge 7",
+    "imageName": "samsungedge7.jpg"
+  },
+  {
+    "offerId": 3,
+    "storeId": 2,
+    "prodId": null,
+    "reqType": "OFFER",
+    "cat": null,
+    "per": "4%",
+    "shopName": null,
+    "sDesc": null,
+    "lDesc": "Kowloon milk",
+    "imageName": "kowloonmilk.jpg"
+  },
+  {
+    "offerId": 4,
+    "storeId": 2,
+    "prodId": null,
+    "reqType": "OFFER",
+    "cat": null,
+    "per": "7%",
+    "shopName": null,
+    "sDesc": null,
+    "lDesc": "President butter",
+    "imageName": "presidentbutter.jpg"
+  }
+]
