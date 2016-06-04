@@ -23,6 +23,7 @@
 	<script src="libs/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
 	<script src="libs/evothings/evothings.js"></script>
 	<script src="libs/evothings/ui/ui.js"></script>
+	<script src="home.js"></script>
 	<script src="app.js"></script>
 
 </head>
@@ -31,52 +32,40 @@
 	<div data-role="header" class="jqm-header ui-header ui-bar-inherit" role="banner"
 	style="background-color:white;">
 			<h2 class="ui-title" role="heading" aria-level="1">
-
+				Window Shopper
 			</h2>
 	<a href="#" class="jqm-navmenu-link ui-nodisc-icon ui-alt-icon ui-btn-left ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all" data-role="button" role="button">Menu</a>
-
-	
-	
-	<a href="#popupMenu" data-rel="popup" data-transition="slideup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-search ui-btn-icon-left ui-btn-a ui-btn-icon-notext">Search</a>
-
-<div data-role="popup" id="popupMenu" data-theme="b">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;">
-            <li data-role="list-divider">Choose an action</li>
-            <li><a href="#">View details</a></li>
-            <li><a href="#">Edit</a></li>
-            <li><a href="#">Disable</a></li>
-            <li><a href="#">Delete</a></li>
-        </ul>
+	<a href="#" class="jqm-search-link ui-nodisc-icon ui-alt-icon ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all" data-role="button" role="button">Profile</a>
 </div>
 
-	<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
-    <li><a href="#">
-        <img src="../_assets/img/album-bb.jpg">
-    <h2>Broken Bells</h2>
-    <p>Broken Bells</p></a>
-        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-hc.jpg">
-    <h2>Warning</h2>
-    <p>Hot Chip</p></a>
-        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-    </li>
-    <li><a href="#">
-        <img src="../_assets/img/album-p.jpg">
-    <h2>Wolfgang Amadeus Phoenix</h2>
-    <p>Phoenix</p></a>
-        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
-    </li>
-</ul>
-<div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
-    <h3>Purchase Album?</h3>
-<p>Your download will begin immediately on your mobile device when you purchase.</p>
-    <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-check ui-btn-icon-left ui-btn-inline ui-mini">Buy: $10.99</a>
-    <a href="index.html" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+
+
+<div id="contentArea" style="width:100%; height:100%;">
+	<div id-"homeScreenPage">
+		<ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
+		    <li><a href="#">
+		        <img src="../_assets/img/album-bb.jpg">
+		    <h2>Broken Bells</h2>
+		    <p>Broken Bells</p></a>
+		        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+		    </li>
+		    <li><a href="#">
+		        <img src="../_assets/img/album-hc.jpg">
+		    <h2>Warning</h2>
+		    <p>Hot Chip</p></a>
+		        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+		    </li>
+		    <li><a href="#">
+		        <img src="../_assets/img/album-p.jpg">
+		    <h2>Wolfgang Amadeus Phoenix</h2>
+		    <p>Phoenix</p></a>
+		        <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+		    </li>
+		</ul>
+	</div>
 </div>
 
-</div>
+
 <div id="clickemeplease">Click this Button</div>
 </body>
 

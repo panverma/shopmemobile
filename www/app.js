@@ -126,7 +126,7 @@ var app = (function()
 		}
 	}
 
-
+	var beacons = ""
 	function displayBeaconList()
 	{
 		// Clear beacon list.
@@ -135,14 +135,6 @@ var app = (function()
 		var timeNow = Date.now();
 
 		// Update beacon list.
-
-		$.post(
-			"http://shopme-epamershackers.rhcloud.com/view",
-			{"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":1,"rs":-44},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":2,"rs":-32},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":3,"rs":-68}],"storeId":0},
-			function(data,status,xhr){
-				console.log("sucess"+ data);
-			}
-    );
 
 		//return;
 		$.each(beacons, function(key, beacon)
@@ -177,20 +169,21 @@ var app = (function()
 	return app;
 })();
 
-app.initialize();
+
 $(document).ready(function(){
+<<<<<<< Updated upstream
+=======
+	app.initialize();
+
+
+
+>>>>>>> Stashed changes
 	$("#clickemeplease").on("click", function(){
 		console.log("clicked");
 
 
 		var data = JSON.stringify({"reqType":"OFFER","beacons":[{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":1,"rs":-44},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":2,"rs":-32},{"uid":"B5B182C7-EAB1-4988-AA99-B5C1517008D9","ma":1,"mi":3,"rs":-68}],"storeId":0})
-		// $.post(
-		// 	"http://shopme-epamershackers.rhcloud.com/view",
-		// 	data,
-		// 	function(data,status,xhr){
-		// 		console.log("sucess"+ data);
-		// 	}
-		// );
+
 		$.ajax({
 		    url: url,
 		    type: "GET",
@@ -208,6 +201,23 @@ $(document).ready(function(){
  	// 	});
 
 	});
+	function onBeaconUpdated(_beaconList){
+		var beaconReq = new Object();
+		beaconReq.reqType = "OFFER";
+		beaconReq.beacons = _beaconList;
+		beaconReq.storeId = "0";
 
-
+		var url = "http://shopme-epamershackers.rhcloud.com/view";
+		$.ajax({
+		    url: url,
+		    type: "GET",
+		    data: JSON.stringify(beaconReq),
+		    contentType: "application/json",
+		    complete: onBeaconListResponse
+		});
+	};
+	function onBeaconListResponse(){
+	//	$("#contentArea").load("templates/homelist.html");
+	};
+onBeaconListResponse();
 })
