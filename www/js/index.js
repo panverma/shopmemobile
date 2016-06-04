@@ -36,7 +36,7 @@ var dApp = (function()
 	{
 		// Specify a shortcut for the location manager holding the iBeacon functions.
 		window.locationManager = cordova.plugins.locationManager;
-    alert("On Device Ready Called");
+    //alert("On Device Ready Called");
 		// Start tracking beacons!
 		startScan();
 
@@ -49,12 +49,16 @@ var dApp = (function()
 		// The delegate object holds the iBeacon callback functions
 		// specified below.
 		var delegate = new locationManager.Delegate();
-		alert("Device trying to found");
+		//alert("Device trying to found");
 		// Called continuously when ranging beacons.
 		delegate.didRangeBeaconsInRegion = function(pluginResult)
 		{
 			//console.log('didRangeBeaconsInRegion: ' + JSON.stringify(pluginResult))
-			alert("Device found " + pluginResult.beacons.length);
+			//alert("Device found " + pluginResult.beacons.length);
+
+			app.beaconArr = pluginResult.beacons;
+
+
 			for (var i in pluginResult.beacons)
 			{
 				// Insert beacon into table of found beacons.
@@ -134,7 +138,7 @@ var dApp = (function()
 		return;
 		$.each(beacons, function(key, beacon)
 		{
-      alert(beacon.uuid);
+      //alert(beacon.uuid);
 			// Only show beacons that are updated during the last 60 seconds.
 			if (beacon.timeStamp + 60000 > timeNow)
 			{
