@@ -247,15 +247,17 @@ app.controller('MainController', function($rootScope, $scope, $location,
 
     $scope.setInterval = function() {
         beacon = setInterval(function() {
-            $scope.beaconArr = window.dApp.beaconArr;
-            $scope.beaconArrLength = window.dApp.beaconArr.length;
-            $scope.$apply();
+            window.setTimeout(function(){
+              $scope.beaconArr = window.dApp.beaconArr;
+              $scope.beaconArrLength = window.dApp.beaconArr.length;
+              alert(window.dApp.beaconArr.length);
+            }, 1);
             alert(window.dApp.beaconArr.length);
             if (beaconArrLength > 0) {
                 $scope.getProductOfferList();
             }
-        }, 1000);
-    }
+        }, 2000);
+    };
 
     // User agent displayed in home page
     $scope.userAgent = navigator.userAgent;
