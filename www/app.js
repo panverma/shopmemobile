@@ -179,7 +179,6 @@ var app = (function()
 
 app.initialize();
 $(document).ready(function(){
-	$("#contentArea").load("templates/productdesc.html");
 	$("#clickemeplease").on("click", function(){
 		console.log("clicked");
 
