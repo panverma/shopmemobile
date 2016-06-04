@@ -247,6 +247,10 @@ app.controller('MainController', function($rootScope, $scope, $location,
     alert('Swiped ' + direction);
   };
 
+  var beacon = setInterval(function(){
+    $scope.beaconArr = window.dApp.beaconArr;
+  }, 100);
+
   // User agent displayed in home page
   $scope.userAgent = navigator.userAgent;
 
