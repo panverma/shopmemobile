@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://127.0.0.1:8080/#/ -->
+<html class=" overthrow-enabled"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+    
+
+    <title>Shop:Me</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,connect-src *">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+    <link rel="shortcut icon" href="http://127.0.0.1:8080/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Shop_Me_files/mobile-angular-ui-hover.min.css">
+    <link rel="stylesheet" href="./Shop_Me_files/mobile-angular-ui-base.min.css">
+    <link rel="stylesheet" href="./Shop_Me_files/mobile-angular-ui-desktop.min.css">
+    <link rel="stylesheet" href="./Shop_Me_files/styles-1.css">
+    <link rel="stylesheet" href="./Shop_Me_files/styles-2.css">
+    <script src="./Shop_Me_files/cordova.js"></script>
+    <script src="./Shop_Me_files/cordova_plugins.js"></script>
+    <script src="./Shop_Me_files/angular.min.js"></script><script src="./Shop_Me_files/underscore-min-1.6.js"></script><script src="./Shop_Me_files/q.min.js"></script><script src="./Shop_Me_files/LocationManager.js"></script><script src="./Shop_Me_files/Delegate.js"></script><script src="./Shop_Me_files/Region.js"></script><script src="./Shop_Me_files/Regions.js"></script><script src="./Shop_Me_files/CircularRegion.js"></script><script src="./Shop_Me_files/BeaconRegion.js"></script>
+    <script src="./Shop_Me_files/angular-route.min.js"></script>
+    <script src="./Shop_Me_files/mobile-angular-ui.min.js"></script>
+
+
+	<script src="./Shop_Me_files/jquery.js"></script>
+	<script src="./Shop_Me_files/evothings.js"></script>
+	<script src="./Shop_Me_files/ui.js"></script><script type="text/javascript" src="./Shop_Me_files/fastclick.js"></script>
+
+    <!-- Required to use $touch, $swipe, $drag and $translate services -->
+    <script src="./Shop_Me_files/mobile-angular-ui.gestures.min.js"></script>
+    <script src="./Shop_Me_files/app.js"></script>
+    <script src="./Shop_Me_files/index.js"></script>
+  </head>
+
+  <body ng-app="MobileAngularUiExamples" ng-controller="MainController" ui-prevent-touchmove-defaults="" style="background-color:#fff;" class="ng-scope has-navbar-top has-sidebar-left has-sidebar-right sidebar-right-visible sidebar-right-in">
+
+    <!-- Sidebars -->
+    <!-- ngInclude: 'sidebar.html' --><div ng-include="&#39;sidebar.html&#39;" ui-track-as-search-param="true" class="sidebar sidebar-left ng-scope"><div class="scrollable ng-scope" style="padding-top: 0px;">
+  <h1 class="scrollable-header app-name">Shop:Me <small>0.1</small></h1>
+  <div class="scrollable-content" style="background-color:#fff;">
+    <div class="list-group" ui-turn-off="uiSidebarLeft">
+      <a class="list-group-item active" href="http://127.0.0.1:8080/#/">Home <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="http://127.0.0.1:8080/#/nearByStores">Near by Store's <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="http://127.0.0.1:8080/#/nearByProducts">Near by Products <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="http://127.0.0.1:8080/#/settings">Settings <i class="fa fa-chevron-right pull-right"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+    <!-- ngInclude: 'rightbar.html' --><div ng-include="&#39;rightbar.html&#39;" class="sidebar sidebar-right ng-scope"><div class="scrollable ng-scope" style="background-color:#fff;padding:0px 10px;">
+    <div class="scrollable-content">
+        <div class="" ui-toggle="uiSidebarRight" style="padding: 23px 10px;">
+            <div style="padding-bottom:20px;">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <img src="./Shop_Me_files/profilepic1.jpg" style="width:75px; border-raduis:10px;">
+                            </td>
+                            <td style="padding-right:5px;">
+                                <span style="font-size:18px; padding:5px;">Swapnil The Legend</span>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <hr style="width:90%;">
+            <div class="">
+                I would like to see : <table style="width:100%;">
+                    <thead></thead>
+                    <tbody style="padding:5px;">
+                        <tr>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+            <input type="checkbox" value="" class="needsclick">
+                  All
+                </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                        <input type="checkbox" value="" class="needsclick">
+                              Offers
+                            </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                        <input type="checkbox" value="" class="needsclick">
+                              Products
+                            </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                        <input type="checkbox" value="" class="needsclick">
+                              Stores
+                            </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr style="width:90%;">
+            <div class="" style="margin-top:15px;">
+                I'm intrested in : <table style="width:100%;">
+                    <thead></thead>
+                    <tbody>
+                        <tr style="padding:5px;">
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                      <input type="checkbox" value="" class="needsclick">
+                            Electronics
+                          </label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                              <input type="checkbox" value="" class="needsclick">
+                              Furniture
+                              </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                              <input type="checkbox" value="" class="needsclick">
+                              Accessories
+                              </label>
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                              <input type="checkbox" value="" class="needsclick">
+                              Garments
+                              </label>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                              <input type="checkbox" value="" class="needsclick">
+                              Sports
+                              </label>
+                                </div>
+
+
+                            </td>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                              <input type="checkbox" value="" class="needsclick">
+                              Food
+                              </label>
+                                </div>
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="checkbox" style="margin-top:5px; margin-bottom:5px;">
+                                    <label>
+                              <input type="checkbox" value="" class="needsclick">
+                              Others
+                              </label>
+                                </div>
+
+
+                            </td>
+                            <td><input type="checkbox" class="needsclick">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<hr style="width:90%;">
+        </div>
+    </div>
+</div>
+</div>
+
+    <div class="app" ui-swipe-right="Ui.turnOn(&quot;uiSidebarLeft&quot;)" ui-swipe-left="Ui.turnOff(&quot;uiSidebarLeft&quot;)">
+
+      <!-- Navbars -->
+
+      <div class="navbar navbar-app navbar-absolute-top">
+        <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+    <span class="ng-scope">Home - Offers</span>
+</div>
+        <div class="btn-group pull-left">
+          <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+            <i class="fa fa-bars"></i>
+          </div>
+        </div>
+        <div class="btn-group pull-right">
+          <div ui-toggle="uiSidebarRight" class="btn sidebar-toggle">
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- App Body -->
+      <div class="app-body" ng-class="{loading: loading}">
+        <div ng-show="loading" class="app-content-loading ng-hide">
+          <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div class="app-content">
+          <!-- ngView: undefined --><ng-view class="ng-scope">
+<div class="list-group ng-scope">
+    <!-- ngRepeat: offer in offerListData --><a ng-repeat="offer in offerListData" class="list-group-item ng-scope" ng-click="onOfferListItemClickfromHome($event);" style="pointer:cursor;">
+      <div class="row">
+          <div style="width:150px; border-raduis:4px;">
+              <img src="./Shop_Me_files/iphone6s.jpg" class="col-xs-12">
+          </div>
+          <div style="float:left; padding-left:0px;width:55%;">
+              <h4 class="list-group-item-text ng-binding">I Phone 6S</h4>
+              <h6 class="list-group-item-text ng-binding">iPhone 6S 8MP camera, and its good <span style="color:red;font-weight:bold;" class="ng-binding">@9%</span> discount!!</h6>
+          </div>
+      </div>
+    </a><!-- end ngRepeat: offer in offerListData --><a ng-repeat="offer in offerListData" class="list-group-item ng-scope" ng-click="onOfferListItemClickfromHome($event);" style="pointer:cursor;">
+      <div class="row">
+          <div style="width:150px; border-raduis:4px;">
+              <img src="./Shop_Me_files/samsungedge7.jpg" class="col-xs-12">
+          </div>
+          <div style="float:left; padding-left:0px;width:55%;">
+              <h4 class="list-group-item-text ng-binding">Samsung S7</h4>
+              <h6 class="list-group-item-text ng-binding">Samsung edge 7 a new mobile in the market  <span style="color:red;font-weight:bold;" class="ng-binding">@15%</span> discount!!</h6>
+          </div>
+      </div>
+    </a><!-- end ngRepeat: offer in offerListData --><a ng-repeat="offer in offerListData" class="list-group-item ng-scope" ng-click="onOfferListItemClickfromHome($event);" style="pointer:cursor;">
+      <div class="row">
+          <div style="width:150px; border-raduis:4px;">
+              <img src="./Shop_Me_files/kowloonmilk.jpg" class="col-xs-12">
+          </div>
+          <div style="float:left; padding-left:0px;width:55%;">
+              <h4 class="list-group-item-text ng-binding">Hongkong Milk</h4>
+              <h6 class="list-group-item-text ng-binding">Kowloon milk, delivered directly from hongkong  <span style="color:red;font-weight:bold;" class="ng-binding">@4%</span> discount!!</h6>
+          </div>
+      </div>
+    </a><!-- end ngRepeat: offer in offerListData --><a ng-repeat="offer in offerListData" class="list-group-item ng-scope" ng-click="onOfferListItemClickfromHome($event);" style="pointer:cursor;">
+      <div class="row">
+          <div style="width:150px; border-raduis:4px;">
+              <img src="./Shop_Me_files/presidentbutter.jpg" class="col-xs-12">
+          </div>
+          <div style="float:left; padding-left:0px;width:55%;">
+              <h4 class="list-group-item-text ng-binding">Butter</h4>
+              <h6 class="list-group-item-text ng-binding">President butter, finest butter  <span style="color:red;font-weight:bold;" class="ng-binding">@7%</span> discount!!</h6>
+          </div>
+      </div>
+    </a><!-- end ngRepeat: offer in offerListData -->
+</div>
+</ng-view>
+        </div>
+      </div>
+
+    </div><!-- ~ .app -->
+
+    <div ui-yield-to="modals"></div>
+
+
+  
+
+</body></html>

@@ -1,5 +1,5 @@
 <div ui-content-for="title" ng-init="getOfferList()">
-    <span>{{beaconArrLength}}</span>
+    <span>Home - Offers</span>
 </div>
 <div class="list-group">
     <a ng-repeat="offer in offerListData" class="list-group-item"
@@ -8,10 +8,9 @@
           <div style="width:150px; border-raduis:4px;">
               <img src="img/{{offer.imageName}}" class="col-xs-12" />
           </div>
-          <div style="float:left; padding-left:0px;">
-              <h4 class="list-group-item-heading">{{offer.shopName}}</h4>
-              <h6 class="list-group-item-text">{{offer.sDesc}}</h6>
-              <p class="list-group-item-text" style="font-size:11px;">{{offer.lDesc}}</p>
+          <div style="float:left; padding-left:0px;width:55%;">
+              <h4 class="list-group-item-text">{{offer.sDesc}}</h4>
+              <h6 class="list-group-item-text">{{offer.lDesc}} <span style="color:red;font-weight:bold;">@{{offer.per}}</span> discount!!</h6>
           </div>
       </div>
     </a>

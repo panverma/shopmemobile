@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://127.0.0.1:8080/#/store/12345 -->
+<html class=" overthrow-enabled"><script id="tinyhippos-injected">if (window.top.ripple) { window.top.ripple("bootstrap").inject(window, document); }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+    
+
+    <title>iBeacon</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+    <link rel="shortcut icon" href="http://127.0.0.1:8080/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./iBeacon_files/mobile-angular-ui-hover.min.css">
+    <link rel="stylesheet" href="./iBeacon_files/mobile-angular-ui-base.min.css">
+    <link rel="stylesheet" href="./iBeacon_files/mobile-angular-ui-desktop.min.css">
+    <link rel="stylesheet" href="./iBeacon_files/styles-1.css">
+    <link rel="stylesheet" href="./iBeacon_files/styles-2.css">
+    <script src="./iBeacon_files/cordova.js"></script>
+    <script src="./iBeacon_files/cordova_plugins.js"></script>
+    <script src="./iBeacon_files/angular.min.js"></script><script src="./iBeacon_files/underscore-min-1.6.js"></script><script src="./iBeacon_files/q.min.js"></script><script src="./iBeacon_files/LocationManager.js"></script><script src="./iBeacon_files/Delegate.js"></script><script src="./iBeacon_files/Region.js"></script><script src="./iBeacon_files/Regions.js"></script><script src="./iBeacon_files/CircularRegion.js"></script><script src="./iBeacon_files/BeaconRegion.js"></script>
+    <script src="./iBeacon_files/angular-route.min.js"></script>
+    <script src="./iBeacon_files/mobile-angular-ui.min.js"></script>
+
+
+	<script src="./iBeacon_files/jquery.js"></script>
+	<script src="./iBeacon_files/evothings.js"></script>
+	<script src="./iBeacon_files/ui.js"></script><script type="text/javascript" src="./iBeacon_files/fastclick.js"></script>
+
+    <!-- Required to use $touch, $swipe, $drag and $translate services -->
+    <script src="./iBeacon_files/mobile-angular-ui.gestures.min.js"></script>
+    <script src="./iBeacon_files/app.js"></script>
+    <script src="./iBeacon_files/index.js"></script>
+  </head>
+
+  <body ng-app="MobileAngularUiExamples" ng-controller="MainController" ui-prevent-touchmove-defaults="" style="background-color:#fff;" class="ng-scope has-navbar-top has-sidebar-right has-sidebar-left sidebar-right-visible sidebar-right-in">
+
+    <!-- Sidebars -->
+    <!-- ngInclude: 'sidebar.html' --><div ng-include="&#39;sidebar.html&#39;" ui-track-as-search-param="true" class="sidebar sidebar-left ng-scope"><div class="scrollable ng-scope" style="padding-top: 0px;">
+  <h1 class="scrollable-header app-name">iBeacon App <small>0.1</small></h1>
+  <div class="scrollable-content" style="background-color:#fff;">
+    <div class="list-group" ui-turn-off="uiSidebarLeft">
+      <a class="list-group-item" href="http://127.0.0.1:8080/#/">Home <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="http://127.0.0.1:8080/#/nearByStores">Near by Store's <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="http://127.0.0.1:8080/#/findStore">Find a Store <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="http://127.0.0.1:8080/#/nearByProducts">Near by Products <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="http://127.0.0.1:8080/#/settings">Settings <i class="fa fa-chevron-right pull-right"></i></a>
+    </div>
+  </div>
+</div>
+</div>
+
+    <!-- ngInclude: 'rightbar.html' --><div ng-include="&#39;rightbar.html&#39;" class="sidebar sidebar-right ng-scope"><div class="scrollable ng-scope" style="background-color:#fff;">
+  <div class="scrollable-content">
+    <div class="" ui-toggle="uiSidebarRight" style="padding: 23px 10px;">
+      <div style="padding-bottom:20px;">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <img src="./iBeacon_files/profilepic1.jpg" style="width:75px;">
+              </td>
+              <td>
+                <span style="font-size:14px;">Shopme User</span>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+      <div class="">
+        I would like to see : <table style="width:100%;">
+          <thead></thead>
+          <tbody style="padding: 14px;">
+            <tr>
+              <td><input type="checkbox" class="needsclick"><span style="padding-right:5px;">All</span> </td>
+              <td><input type="checkbox" class="needsclick">Offers </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="needsclick">Products </td>
+              <td><input type="checkbox" class="needsclick">Stores </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="" style="margin-top:15px;">
+        I'm intrested in : <table style="width:100%;">
+          <thead></thead>
+          <tbody>
+            <tr style="padding:5px;">
+              <td><input type="checkbox" class="needsclick"><span style="padding-right:5px;">Electronics</span> </td>
+              <td><input type="checkbox" class="needsclick">Furniture </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="needsclick">Accessories </td>
+              <td><input type="checkbox" class="needsclick">Garments </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="needsclick">Sports </td>
+              <td><input type="checkbox" class="needsclick">Food </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" class="needsclick">Others </td>
+              <td><input type="checkbox" class="needsclick"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+    <div class="app" ui-swipe-right="Ui.turnOn(&quot;uiSidebarLeft&quot;)" ui-swipe-left="Ui.turnOff(&quot;uiSidebarLeft&quot;)">
+
+      <!-- Navbars -->
+
+      <div class="navbar navbar-app navbar-absolute-top">
+        <div class="navbar-brand navbar-brand-center" ui-yield-to="title"><span class="ng-scope">
+          Right Bar
+        </span></div>
+        <div class="btn-group pull-left">
+          <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+            <i class="fa fa-bars"></i> Menu
+          </div>
+        </div>
+        <div class="btn-group pull-right">
+          <div ui-toggle="uiSidebarRight" class="btn sidebar-toggle">
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- App Body -->
+      <div class="app-body" ng-class="{loading: loading}">
+        <div ng-show="loading" class="app-content-loading ng-hide">
+          <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        </div>
+        <div class="app-content">
+          <!-- ngView: undefined --><ng-view class="ng-scope"><div class="content scrollable-content ng-scope" style="padding: 10px 22px;background-color:white;">
+  <div class="row">
+    <div class="imageDiv">
+        <img src="./iBeacon_files/croma.jpg">
+    </div>
+  </div>
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Our Offers</h3>
+      </div>
+      <div class="panel-body">
+        <div class="list-group">
+          <a class="list-group-item" ng-click="onprodListItemClickfromStore($event)">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+          <a href="http://127.0.0.1:8080/#" class="list-group-item">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+          <a href="http://127.0.0.1:8080/#" class="list-group-item">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Our Products</h3>
+      </div>
+      <div class="panel-body">
+        <div class="list-group">
+          <a href="http://127.0.0.1:8080/#" class="list-group-item">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+          <a href="http://127.0.0.1:8080/#" class="list-group-item">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+          <a href="http://127.0.0.1:8080/#" class="list-group-item">
+            <h4 class="list-group-item-heading">List group item heading</h4>
+            <p class="list-group-item-text">...</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</ng-view>
+        </div>
+      </div>
+
+    </div><!-- ~ .app -->
+
+    <div ui-yield-to="modals"></div>
+
+
+  
+
+</body></html>
